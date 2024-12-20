@@ -37,7 +37,6 @@ class Config:
 # Example usage
 if __name__ == "__main__":
     config: Config = Config()
-    config.set('kluc', "hodnota")
-    hodnota = config.get('kluc')
-    print(hodnota)
-    config.remove('kluc')
+    config.set('version', "1.0.0")
+    config.set('language', "python")
+    config.set('output', "clipboard")

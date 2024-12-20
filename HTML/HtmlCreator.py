@@ -16,11 +16,12 @@ def _save_output_html(content):
         file.write(content)
 
 
-def create_html(code: str) -> bool:
+def create_html(code: str, styles: str = "") -> bool:
     try:
         _create_output_html_from_template()
         content = _load_template_content()
         content = content.replace("@__CONTENT__@", code)
+        content = content.replace("@__STYLES__@", styles)
         _save_output_html(content)
         return True
 
