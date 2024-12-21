@@ -18,33 +18,39 @@ pre {
 }
 
 #content {
-    display: grid;
-    place-content: center;
-    height: 60vh;
+}
+
+#wrapped-div {
+    width: min-content;
+    overflow: hidden;
+    padding: 1em;
 }
 
 #red_circle {
-    color: rgba(224, 27, 27, 0.85);
+    background-color: rgba(224, 27, 27, 0.85);
 }
 
 #yell_circle {
-    color: rgba(251, 255, 0, 0.79);
+    background-color: rgba(251, 255, 0, 0.79);
 }
 
 #green_circle {
-    color: #189b18;
+    background-color: #189b18;
 }
 
 .icons_container {
-    padding: 0.5em;
+    padding: 0.3em;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
 }
 
 .icons {
-    padding-left: 0.7em;
-    font-size: 0.7em;
+    height: 0.7em;
+    width: 0.7em;
+    border-radius: 50%;
+    margin-left: 0.5em;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.4), 0 4px 16px 0 rgba(0, 0, 0, 0.20);
 }
 
 .code_container {

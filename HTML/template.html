@@ -20,19 +20,20 @@
     </style>
 </head>
 <body>
-<div id="content">
-    <div class="snippet">
-        <div class="icons_container">
-            <i id="red_circle" class="icons fa-solid fa-circle"></i>
-            <i id="yell_circle" class="icons fa-solid fa-circle"></i>
-            <!--
-                        <i id="green_circle" class="icons fa-solid fa-circle"></i>
-            -->
-        </div>
-        <div class="code_container">@__CONTENT__@
+<div id="wrapped-div">
+    <div id="content">
+        <div class="snippet">
+            <div class="icons_container">
+                <div class="icons_container">
+                    <div id="red_circle" class="icons"></div>
+                    <div id="yell_circle" class="icons"></div>
+                    <div id="green_circle" class="icons"></div>
+                </div>
+            </div>
+            <div class="code_container">@__CONTENT__@
+            </div>
         </div>
     </div>
 </div>
-
 </body>
 </html>
