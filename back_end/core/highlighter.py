@@ -3,16 +3,15 @@ from pygments.formatters.html import HtmlFormatter
 from pygments.lexer import Lexer
 from pygments.lexers import guess_lexer, get_lexer_by_name
 
-from config import Config
+from back_end.utilities.json_manager import JsonManager
 
-def highlight(code: str)->(str, str):
-    config = Config()
+def highlight(config: JsonManager, code: str)->(str, str):
     language = config.get("language")
     lexer: Lexer | None = _get_lexer(language, code)
     if lexer is None:
         return code, ""
 
-    formatter = HtmlFormatter(style=config.get("current_theme"), linenos=True)
+    formatter = HtmlFormatter(style=config.get("theme"), linenos=True)
     return pygments.highlight(code, lexer, formatter), formatter.get_style_defs()
 
 def _get_lexer(language: str, code: str) -> Lexer | None:

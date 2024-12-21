@@ -1,10 +1,10 @@
 import shutil
 
-from config import Config
+from back_end.utilities.json_manager import JsonManager
 
-_prefix = "HTML/"
+_prefix = "back_end/core/html/"
 
-def _create_output_html_from_template() -> bool:
+def _create_output_html_from_template():
     shutil.copyfile(f"{_prefix}template.html", f"{_prefix}output.html")
 
 
@@ -18,19 +18,21 @@ def _save_output_html(content):
         file.write(content)
 
 
-def create_html(code: str, styles: str = "") -> bool:
+def create_html(config: JsonManager, code: str, styles: str = "") -> bool:
     try:
         _create_output_html_from_template()
         content = _load_template_content()
         content = content.replace("@__CONTENT__@", code)
         content = content.replace("@__STYLES__@", styles)
 
-        config = Config()
-        theme = config.get("current_theme")
+        theme = config.get("theme")
 
-        content = content.replace("@__BAR_BACKGROUND__@", config.get("colors")[theme]["bar_background"])
-        content = content.replace("@__CODE_BACKGROUND__@", config.get("colors")[theme]["code_background"])
+        content = content.replace("@__BAR_BACKGROUND__@", config.get("themes")[theme]["bar_background"])
+        content = content.replace("@__CODE_BACKGROUND__@", config.get("themes")[theme]["code_background"])
         content = content.replace("@__BACKGROUND_COLOR__@", config.get("background_color"))
+        content = content.replace("@__LANGUAGE__@", config.get("language"))
+        content = content.replace("@__FILENAME__@", config.get("filename"))
+
         _save_output_html(content)
         return True
 

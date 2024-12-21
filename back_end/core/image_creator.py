@@ -28,10 +28,7 @@ async def html_to_png(input_html, output_png):
         await browser.close()
 
 def generate_image_from_html():
-    input_html = "HTML/output.html"  # Relatívna cesta k súboru
+    input_html = "back_end/core/html/output.html"  # Relatívna cesta k súboru
     output_png = "output.png"
 
     asyncio.run(html_to_png(input_html, output_png))
-
-    print(f"PNG obrázok bol úspešne vygenerovaný: {output_png}")
-

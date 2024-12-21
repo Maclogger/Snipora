@@ -1,22 +1,18 @@
-from pygments import highlight
-
-import HTML.html_creator
-import highlighter
-import image_creator
-from config import Config
-from Loaders.TextLoader import TextLoader
+import back_end.core.html.html_creator
+from back_end.core import highlighter, image_creator, core
+from back_end.utilities.json_manager import JsonManager, create_template_config
+from front_end.loaders.text_loader import TextLoader
 
 
 def main():
-    config = Config()
-    loader = TextLoader()
-    code: str = loader.to_string({'language': config.get('language')})
-    code, styles = highlighter.highlight(code)
-    success: bool = HTML.html_creator.create_html(code, styles)
-    if success:
-        image_creator.generate_image_from_html()
-
+    code: str = TextLoader().to_string({'language': "java"})
+    config = create_template_config("test.json")
+    config.set('language', "java")
+    config.set('filename', "Test.java")
+    config.set('background_color', "#F3F3F3")
+    config.set('theme', "lightbulb")
+    success: bool = core.run(config, code)
+    print(f"Success: {success}")
 
 if __name__ == '__main__':
     main()
-    print("OK")

@@ -1,4 +1,4 @@
-from Loaders.ILoader import ILoader
+from front_end.loaders.i_loader import ILoader
 
 
 class FileLoader(ILoader):

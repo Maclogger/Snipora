@@ -1,6 +1,6 @@
-from typing import List, Dict, Any
+from typing import Dict, Any
 
-from Loaders.ILoader import ILoader
+from front_end.loaders.i_loader import ILoader
 
 
 def get_options() -> Dict[str, str]:
@@ -13,7 +13,7 @@ def get_options() -> Dict[str, str]:
         "java": \
 """class Test
 {
-    public static void main(String []args)
+    public static void main(String[] args)
     {
         System.out.println("My First Java Program.");
     }
@@ -22,7 +22,7 @@ def get_options() -> Dict[str, str]:
         "c#": \
 """public class Program
 {
-    public static void Main(string[]   args)
+    public static void Main(string[] args)
     {
         System.Console.WriteLine("Hello, World!");
     }

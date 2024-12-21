@@ -1,10 +1,10 @@
 {
     "version": "1.0.0",
-    "language": "java",
-    "output": "clipboard",
-    "current_theme": "lightbulb",
-    "background_color": "#000D1E",
-    "colors": {
+    "language": "",
+    "filename": "",
+    "background_color": "",
+    "theme": "",
+    "themes": {
         "bw": {
             "code_background": "#FFFFFF",
             "bar_background": "#000000"
