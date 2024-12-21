@@ -4,23 +4,17 @@
 }
 
 body {
-    background-color: #000d1e;
+    background-color: #ffffff;
 }
 
 pre {
-    color: white;
 }
-
-code {
-    font-family: Consolas, monospace;
-}
-
 
 .snippet {
-    background: rgb(59, 59, 59);
     border-radius: 0.5em;
     overflow: hidden;
     height: max-content;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
 }
 
 #content {
@@ -55,7 +49,6 @@ code {
 
 .code_container {
     padding: 0.7em;
-    background-color: #2c2c2c;
 }
 
 pre {

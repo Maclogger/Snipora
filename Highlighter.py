@@ -5,7 +5,6 @@ from pygments.lexers import guess_lexer, get_lexer_by_name
 
 from Config import Config
 
-
 def highlight(code: str)->(str, str):
     config = Config()
     language = config.get("language")
@@ -13,7 +12,7 @@ def highlight(code: str)->(str, str):
     if lexer is None:
         return code, ""
 
-    formatter = HtmlFormatter(linenos=True, cssclass="source")
+    formatter = HtmlFormatter(style=config.get("current_theme"), linenos=True)
     return pygments.highlight(code, lexer, formatter), formatter.get_style_defs()
 
 def _get_lexer(language: str, code: str) -> Lexer | None:
