@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{cbd5a3700b}" />
+    <file url="PROJECT" libraries="{bootstrap-icons, cbd5a3700b}" />
   </component>
 </project>

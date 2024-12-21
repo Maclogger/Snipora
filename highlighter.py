@@ -3,7 +3,7 @@ from pygments.formatters.html import HtmlFormatter
 from pygments.lexer import Lexer
 from pygments.lexers import guess_lexer, get_lexer_by_name
 
-from Config import Config
+from config import Config
 
 def highlight(code: str)->(str, str):
     config = Config()

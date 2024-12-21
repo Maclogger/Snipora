@@ -1,6 +1,6 @@
 import shutil
 
-from Config import Config
+from config import Config
 
 _prefix = "HTML/"
 

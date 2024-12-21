@@ -1,23 +1,20 @@
 from pygments import highlight
 
-import HTML.HtmlCreator
-import Highlighter
-from Config import Config
+import HTML.html_creator
+import highlighter
+import image_creator
+from config import Config
 from Loaders.TextLoader import TextLoader
-from Savers.ClipboardSaver import ClipboardSaver
 
 
 def main():
     config = Config()
     loader = TextLoader()
     code: str = loader.to_string({'language': config.get('language')})
-    code, styles = Highlighter.highlight(code)
-    success: bool = HTML.HtmlCreator.create_html(code, styles)
-    #if success:
-    #    Image.ImageCreator.create_image()
-
-
-    #    saver = ClipboardSaver()
+    code, styles = highlighter.highlight(code)
+    success: bool = HTML.html_creator.create_html(code, styles)
+    if success:
+        image_creator.generate_image_from_html()
 
 
 if __name__ == '__main__':
