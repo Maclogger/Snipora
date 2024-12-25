@@ -70,5 +70,5 @@ class ClipboardSaver(ISaver):
 
 if __name__ == "__main__":
     saver = ClipboardSaver()
-    success = saver.save("output.png")
+    success = saver.save("test.png")
     print(success)

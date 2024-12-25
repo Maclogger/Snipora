@@ -3,10 +3,10 @@ from back_end.core.html import html_creator
 from back_end.utilities.json_manager import JsonManager, create_template_config
 
 
-def run(config: JsonManager, code: str) -> bool:
+def run_with_manager(config: JsonManager, code: str) -> bool:
     if not JsonManager().validate(config): return False
 
-    config.set('language_icon', "python.png")
+    config.set('language_icon', JsonManager().get("languages")[config.get("language")]["icon"])
     code, styles = highlighter.highlight(config, code)
     successfully_created_html: bool = html_creator.create_html(config, code, styles)
 
@@ -24,5 +24,5 @@ def run(code: str, config_path: str, language: str, file_name: str) -> bool:
     config.set('background_color', "#F3F3F3")
     config.set('theme', "lightbulb")
 
-    return run(config, code)
+    return run_with_manager(config, code)
 

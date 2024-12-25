@@ -4,7 +4,7 @@ from typing import Any, Dict
 
 
 class JsonManager:
-    def __init__(self, file_path: str = "back_end/core/config.json"):
+    def __init__(self, file_path: str = "back_end/utilities/data.json"):
         self.file_path = file_path
         self._data: Dict[str, Any] = {}
         self._load()

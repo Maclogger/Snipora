@@ -26,9 +26,10 @@ def create_html(config: JsonManager, code: str, styles: str = "") -> bool:
         content = content.replace("@__STYLES__@", styles)
 
         theme = config.get("theme")
+        fixed_conf = JsonManager()
 
-        content = content.replace("@__BAR_BACKGROUND__@", config.get("themes")[theme]["bar_background"])
-        content = content.replace("@__CODE_BACKGROUND__@", config.get("themes")[theme]["code_background"])
+        content = content.replace("@__BAR_BACKGROUND__@", fixed_conf.get("themes")[theme]["bar_background"])
+        content = content.replace("@__CODE_BACKGROUND__@", fixed_conf.get("themes")[theme]["code_background"])
         content = content.replace("@__BACKGROUND_COLOR__@", config.get("background_color"))
         content = content.replace("@__FILENAME__@", config.get("filename"))
         content = content.replace("@__LANGUAGE_ICON__@", config.get("language_icon"))
