@@ -1,0 +1,66 @@
+{
+  "history": [
+    {
+      "language": "",
+      "filename": "",
+      "background_color": "",
+      "theme": ""
+    }
+  ],
+  "languages": {
+    "python": {
+      "language": "python",
+      "icon": "python.png"
+    },
+    "c#": {
+      "language": "c#",
+      "icon": "csharp.png"
+    },
+    "java": {
+      "language": "java",
+      "icon": "java.png"
+    }
+  },
+  "themes": {
+    "bw": {
+      "code_background": "#FFFFFF",
+      "bar_background": "#000000"
+    },
+    "sas": {
+      "code_background": "#FFFFFF",
+      "bar_background": "#000000"
+    },
+    "monokai": {
+      "code_background": "#272822",
+      "bar_background": "#3B3D31"
+    },
+    "lightbulb": {
+      "code_background": "#1D2331",
+      "bar_background": "#2A3244"
+    },
+    "github-dark": {
+      "code_background": "#0D1117",
+      "bar_background": "#161B22"
+    },
+    "nord": {
+      "code_background": "#2E3440",
+      "bar_background": "#3B4252"
+    },
+    "material": {
+      "code_background": "#263238",
+      "bar_background": "#37474F"
+    },
+    "one-dark": {
+      "code_background": "#282C34",
+      "bar_background": "#3A3F4B"
+    },
+    "dracula": {
+      "code_background": "#282A36",
+      "bar_background": "#383A46"
+    },
+    "stata-dark": {
+      "code_background": "#232629",
+      "bar_background": "#2F3235"
+    }
+  }
+}

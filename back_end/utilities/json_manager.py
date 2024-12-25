@@ -51,6 +51,5 @@ def create_template_config(file_path: str) -> JsonManager:
 # Example usage
 if __name__ == "__main__":
     config: JsonManager = JsonManager()
-    config.set('version', "1.0.0")
     config.set('language', "python")
     config.set('output', "clipboard")
