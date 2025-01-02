@@ -1,4 +1,5 @@
 from back_end.core import highlighter, image_creator
+from back_end.core.code_beautifier import beautify
 from back_end.core.html import html_creator
 from back_end.utilities.json_manager import JsonManager, create_template_config
 
@@ -15,9 +16,8 @@ def run_with_manager(config: JsonManager, code: str) -> bool:
     image_creator.generate_image_from_html()
     return True
 
-
 def run(code: str, config_path: str, language: str, file_name: str) -> bool:
-
+    code = beautify(code)
     config = create_template_config(config_path)
     config.set('language', language)
     config.set('filename', file_name)

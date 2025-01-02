@@ -1,12 +1,19 @@
-import back_end.core.html.html_creator
-from back_end.core import highlighter, image_creator, core
-from back_end.utilities.json_manager import JsonManager, create_template_config
-from front_end.cli import Cli
-from front_end.loaders.clipboard_loader import ClipboardLoader
-from front_end.loaders.text_loader import TextLoader
+import argparse
 
+from front_end.cli import Cli
+
+def main():
+    parser = argparse.ArgumentParser(description="Snipora - Code Snippet Generator")
+    parser.add_argument("mode", choices=["prompts", "auto"],
+                        help="Choose a mode: 'prompts' for manual prompts or 'auto' for automatic generation based on a configfile.")
+    args = parser.parse_args()
+
+    cli = Cli()
+
+    if args.mode == "prompts":
+        cli.run_with_prompts()
+    else:  # This will handle the 'auto' mode
+        cli.run_with_auto_prompts()
 
 if __name__ == '__main__':
-    cli = Cli()
-    cli.run_with_prompts()
-    #main()
+    main()

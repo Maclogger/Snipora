@@ -1,7 +1,7 @@
 {
-    "language": "c#",
-    "filename": "Car.cs",
+    "language": "python",
+    "filename": "",
     "background_color": "#F3F3F3",
     "theme": "lightbulb",
-    "language_icon": "csharp.png"
+    "language_icon": "python.png"
 }
